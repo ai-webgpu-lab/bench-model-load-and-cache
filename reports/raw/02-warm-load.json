@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "repo": "bench-model-load-and-cache",
+    "commit": "d7fe1e9",
+    "timestamp": "2026-04-22T06:14:39.117Z",
+    "owner": "ai-webgpu-lab",
+    "track": "benchmark",
+    "scenario": "model-load-warm",
+    "notes": "manifestFetchMs=11.8; materializeMs=0; cacheReadMs=3.3; prepareMs=0; preparedHit=true; coldTotalMs=45.2; warmTotalMs=15.1; deltaMs=30.1; automation=playwright-chromium",
+    "capture_context": {
+      "tool": "playwright-chromium",
+      "browser_name": "Chromium",
+      "browser_version": "147.0.7727.15",
+      "headless": true,
+      "captured_at": "2026-04-22T06:14:39.234Z",
+      "captured_by": "zzragida"
+    }
+  },
+  "environment": {
+    "browser": {
+      "name": "Chrome",
+      "version": "147.0.7727.15"
+    },
+    "os": {
+      "name": "Linux",
+      "version": "unknown"
+    },
+    "device": {
+      "name": "Linux x86_64",
+      "class": "desktop-high",
+      "cpu": "16 threads",
+      "memory_gb": 16,
+      "power_mode": "unknown"
+    },
+    "gpu": {
+      "adapter": "not-applicable",
+      "required_features": [],
+      "limits": {}
+    },
+    "backend": "mixed",
+    "fallback_triggered": false,
+    "worker_mode": "main",
+    "cache_state": "warm"
+  },
+  "workload": {
+    "kind": "llm-chat",
+    "name": "synthetic-model-load-cache-harness",
+    "input_profile": "32768-synthetic-tokens",
+    "model_id": "synthetic-browser-load-v1"
+  },
+  "metrics": {
+    "common": {
+      "time_to_interactive_ms": 575.9,
+      "init_ms": 15.1,
+      "success_rate": 1,
+      "peak_memory_note": "16 GB reported by browser",
+      "error_type": ""
+    }
+  },
+  "status": "success",
+  "artifacts": {
+    "raw_logs": [
+      "./reports/logs/02-warm-load.log"
+    ],
+    "deploy_url": "https://ai-webgpu-lab.github.io/bench-model-load-and-cache/",
+    "screenshots": [
+      "./reports/screenshots/02-warm-load.png"
+    ]
+  }
+}
