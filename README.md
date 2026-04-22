@@ -40,9 +40,14 @@
 - Repository scaffold initialized
 - Shared result schema copied to `schemas/ai-webgpu-lab-result.schema.json`
 - Shared reporting template copied to `RESULTS.md`
-- GitHub Pages baseline probe copied to `public/index.html`
-- Browser probe logic copied to `public/app.js`
+- Repo-specific Pages baseline copied from `repo-scaffolds/p0/bench-model-load-and-cache/`
+- Generated entry point updated in `public/index.html` and related assets
 - GitHub Pages workflow copied to `.github/workflows/deploy-pages.yml`
+
+## 현재 baseline 상태
+- Repository-specific runnable baseline active: cold/warm model load harness with synthetic fixture materialization, Cache Storage, and prepared-artifact reuse
+- Generated override source: `repo-scaffolds/p0/bench-model-load-and-cache/`
+- Results/report scaffold is ready to promote exported JSON into `reports/raw/` and `RESULTS.md`
 
 ## GitHub Pages 운영 메모
 - Pages URL: https://ai-webgpu-lab.github.io/bench-model-load-and-cache/
