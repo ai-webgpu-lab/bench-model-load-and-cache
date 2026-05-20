@@ -2,8 +2,8 @@
 
 ## 1. 실험 요약
 - 저장소: bench-model-load-and-cache
-- 커밋 해시: d7fe1e9
-- 실험 일시: 2026-04-22T06:14:38.712Z -> 2026-04-22T06:14:39.117Z
+- 커밋 해시: f0aae4b
+- 실험 일시: 2026-05-20T15:38:08.884Z -> 2026-05-20T15:38:10.236Z
 - 담당자: ai-webgpu-lab
 - 실험 유형: `benchmark`
 - 상태: `success`
@@ -26,7 +26,7 @@
 - 장치명: Linux x86_64
 - device class: `desktop-high`
 - CPU: 16 threads
-- 메모리: 16 GB
+- 메모리: 32 GB
 - 전원 상태: `unknown`
 
 ### GPU / 실행 모드
@@ -41,7 +41,7 @@
 ## 4. 워크로드 정의
 - 시나리오 이름: Cold Load, Warm Load
 - 입력 프로필: 32768-synthetic-tokens
-- 데이터 크기: manifestFetchMs=21.3; materializeMs=11.2; cacheReadMs=0; prepareMs=4; preparedHit=false; Run both scenarios to capture cold/warm delta.; automation=playwright-chromium, manifestFetchMs=11.8; materializeMs=0; cacheReadMs=3.3; prepareMs=0; preparedHit=true; coldTotalMs=45.2; warmTotalMs=15.1; deltaMs=30.1; automation=playwright-chromium
+- 데이터 크기: manifestFetchMs=2.7; materializeMs=8.5; cacheReadMs=0; prepareMs=4.1; preparedHit=false; Run both scenarios to capture cold/warm delta.; automation=playwright-chromium, manifestFetchMs=10.5; materializeMs=0; cacheReadMs=7.1; prepareMs=0; preparedHit=true; Run both scenarios to capture cold/warm delta.; automation=playwright-chromium
 - dataset: -
 - model_id 또는 renderer: synthetic-browser-load-v1
 - 양자화/정밀도: -
@@ -51,25 +51,25 @@
 
 ## 5. 측정 지표
 ### 공통
-- time_to_interactive_ms: 170 ~ 575.9 ms
-- init_ms: 15.1 ~ 45.2 ms
+- time_to_interactive_ms: 83.5 ~ 177 ms
+- init_ms: 17.7 ~ 21.6 ms
 - success_rate: 1
-- peak_memory_note: 16 GB reported by browser
+- peak_memory_note: 32 GB reported by browser
 - error_type: -
 
 ### LLM / Benchmark
-- init_ms: 15.1 ~ 45.2 ms
+- init_ms: 17.7 ~ 21.6 ms
 - cache states: cold, warm
 - prepared hit states: false, true
 
 ## 6. 결과 표
 | Run | Scenario | Backend | Cache | Mean | P95 | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 1 | Cold Load | mixed | cold | 45.2 | - | cache=cold, preparedHit=false |
-| 2 | Warm Load | mixed | warm | 15.1 | - | cache=warm, preparedHit=true |
+| 1 | Cold Load | mixed | cold | 21.6 | - | cache=cold, preparedHit=false |
+| 2 | Warm Load | mixed | warm | 17.7 | - | cache=warm, preparedHit=true |
 
 ## 7. 관찰
-- cold init_ms=45.2 ms, warm init_ms=15.1 ms, delta=30.1 ms였다.
+- cold init_ms=21.6 ms, warm init_ms=17.7 ms, delta=3.9 ms였다.
 - warm run meta.notes에는 preparedHit=true가 남아 cache reuse 경로가 실제로 기록됐다.
 - playwright-chromium로 수집된 automation baseline이며 headless=true, browser=Chromium 147.0.7727.15.
 - 실제 runtime/model/renderer 교체 전 deterministic harness 결과이므로, 절대 성능보다 보고 경로와 재현성 확인에 우선 의미가 있다.

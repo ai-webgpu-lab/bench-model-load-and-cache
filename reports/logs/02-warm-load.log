@@ -1,6 +1,7 @@
 repo=bench-model-load-and-cache
 scenario=Warm Load
-captured_at=2026-04-22T06:14:39.234Z
+url_search=(default)
+captured_at=2026-05-20T15:38:10.431Z
 browser=Chromium 147.0.7727.15
 headless=true
 meta_scenario=model-load-warm
@@ -16,20 +17,21 @@ status=success
 {
   "meta": {
     "repo": "bench-model-load-and-cache",
-    "commit": "d7fe1e9",
-    "timestamp": "2026-04-22T06:14:39.117Z",
+    "commit": "f0aae4b",
+    "timestamp": "2026-05-20T15:38:10.236Z",
     "owner": "ai-webgpu-lab",
     "track": "benchmark",
     "scenario": "model-load-warm",
-    "notes": "manifestFetchMs=11.8; materializeMs=0; cacheReadMs=3.3; prepareMs=0; preparedHit=true; coldTotalMs=45.2; warmTotalMs=15.1; deltaMs=30.1; automation=playwright-chromium",
+    "notes": "manifestFetchMs=10.5; materializeMs=0; cacheReadMs=7.1; prepareMs=0; preparedHit=true; Run both scenarios to capture cold/warm delta.; automation=playwright-chromium",
     "capture_context": {
       "tool": "playwright-chromium",
       "browser_name": "Chromium",
       "browser_version": "147.0.7727.15",
       "headless": true,
-      "captured_at": "2026-04-22T06:14:39.234Z",
-      "captured_by": "zzragida"
-    }
+      "captured_at": "2026-05-20T15:38:10.431Z",
+      "captured_by": "codex"
+    },
+    "capture_scenario_id": "02-warm-load"
   },
   "environment": {
     "browser": {
@@ -44,7 +46,7 @@ status=success
       "name": "Linux x86_64",
       "class": "desktop-high",
       "cpu": "16 threads",
-      "memory_gb": 16,
+      "memory_gb": 32,
       "power_mode": "unknown"
     },
     "gpu": {
@@ -65,10 +67,10 @@ status=success
   },
   "metrics": {
     "common": {
-      "time_to_interactive_ms": 575.9,
-      "init_ms": 15.1,
+      "time_to_interactive_ms": 83.5,
+      "init_ms": 17.7,
       "success_rate": 1,
-      "peak_memory_note": "16 GB reported by browser",
+      "peak_memory_note": "32 GB reported by browser",
       "error_type": ""
     }
   },
